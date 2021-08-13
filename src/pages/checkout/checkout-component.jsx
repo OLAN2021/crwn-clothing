@@ -27,11 +27,11 @@ import  CheckoutItem  from '../../components/checkout-item/checkout-item.compone
                 <span>Remove</span>
             </div>
         </div>
-          
-              {cartItems.map(cartItem =>(
+              
+              {cartItems.map(cartItem => (
                  <CheckoutItem key={cartItem.id} cartItem={cartItem}/>
               ))}
-          
+               
           <div className='total'>
               <span>TOTAL: ${total}</span>
           </div>
@@ -41,9 +41,9 @@ import  CheckoutItem  from '../../components/checkout-item/checkout-item.compone
 
 
 const mapStateToProps = createStructuredSelector({
-    selectCartItems: selectCartItems,
+    cartItems: selectCartItems,
     total: selectCartTotal
-})
+});
 
-export default connect(mapStateToProps)(CheckoutPage)
+export default connect(mapStateToProps)(CheckoutPage);
 
